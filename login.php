@@ -5,6 +5,7 @@ $email = $mysqli->escape_string($_SESSION['email']);
 
 $result = $mysqli->query("SELECT * FROM  users WHERE email = '$email'");
 
+// check if the user is exist or not
 if ($result->num_rows == 0 ) {
   $_SESSION['message'] = "User with that email doesn't exist";
   header("location:error.php");
